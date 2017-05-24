@@ -1,0 +1,22 @@
+body {
+	background-image: url("../img/burger1.jpg");
+}
+.page-header {
+	text-align: center;
+	font-family: 'Montserrat Subrayada', sans-serif;
+	color: red;
+	font-size: 70px;
+}
+.burg-panel {
+	border-radius: 15px;
+	border: 2px solid red;
+	font-family: 'Baloo', cursive;
+	/*background-color: #F4F4F4;*/
+
+}
+h2 {
+	text-align: center;
+}
+.list-group-item {
+	border: none;
+}

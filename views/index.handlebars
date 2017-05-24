@@ -1,0 +1,56 @@
+<div class="row">
+	<div class="col-lg-4 burgerstuff">
+		<div class="panel panel-default burg-panel" id="burg-panel1">
+  			<div class="panel-body">
+    			<h2>BURGERS!</h2>
+
+    			<ul class="list-group">
+    				{{#each burgers}}
+    					{{#unless this.devoured}}
+    						<li class="list-group-item">
+    							{{this.burger_name}}
+    							<form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+    								<input type="hidden" name="devoured" value="true">
+    								<button class="btn btn-danger" type="submit">EAT!</button>
+    							</form>
+    						</li>
+    					{{/unless}}
+    				{{/each}}
+    			</ul>
+  			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="panel panel-default burg-panel">
+  			<div class="panel-body">
+    			<h2>ADD A BURGER!</h2>
+    			<form class="create-form" action="/burgers" method="POST">
+					<div class="form-group">
+    					<label for="burg">Burger Name:</label>
+    					<input type="hidden" name="devoured" value="0">
+    					<input type="text" id="burg" name="burger_name">
+    				</div>
+  					<button class="btn btn-danger" type="submit">Add Burger</button>
+				</form>
+  			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="panel panel-default burg-panel">
+  			<div class="panel-body">
+    			<h2>EATEN!</h2>
+    			<ul class="list-group">
+    			{{#each burgers}}
+    				{{#if this.devoured}}
+    					<li class=" list-group-item">
+    						{{this.burger_name}}
+    						<form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+    							<input type="hidden" name="devoured" value="false">
+    						</form>
+    					</li>
+    				{{/if}}
+    			{{/each}}
+  			</div>
+		</div>
+	</div>
+</div>
