@@ -20,3 +20,7 @@ h2 {
 .list-group-item {
 	border: none;
 }
+#burg {
+	border-color: red;
+	border-radius: 7px;
+}
